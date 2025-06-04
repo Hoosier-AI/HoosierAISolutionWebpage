@@ -3,40 +3,182 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Agents</title>
+    <title>AI Agents - Hoosier AI</title>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <h1 class="logo">
-          <div class="logo-wrapper">
-            <img src="images/logo.png" alt="Hoosier AI Logo" class="logo-img" />
+    <div class="page-wrapper">
+      <header>
+        <nav class="navbar">
+          <div class="logo">
+            <img src="images/logo.png" alt="Hoosier AI Logo" />
           </div>
-        </h1>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="agents.html">AI Agents</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <h2 class="page-title">Explore Our AI Agents</h2>
-      <div class="agents-grid">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agents.html" class="active">AI Agents</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <!-- Real Estate Category -->
+        <h2 class="category-title">Real Estate Agents</h2>
+        <section class="agents-grid">
+          <div class="agent-card">
+            <h3>House Flip Analyzer</h3>
+            <p>
+              Evaluate property flips instantly with AI-powered financial
+              metrics.
+            </p>
+            <button onclick="toggleVideo('video1')">Watch Demo</button>
+            <div id="video1" class="video-wrapper" style="display: none">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_1"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="agent-card">
+            <h3>Open House Follow-Up Assistant</h3>
+            <p>
+              Automatically follow up with attendees, send messages, and
+              generate reports.
+            </p>
+            <button onclick="toggleVideo('video2')">Watch Demo</button>
+            <div id="video2" class="video-wrapper" style="display: none">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_2"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="agent-card">
+            <h3>Rental Property Analyzer</h3>
+            <p>
+              Find high cash flow rental properties based on ZIP code and
+              real-time data.
+            </p>
+            <button onclick="toggleVideo('video4')">Watch Demo</button>
+            <div id="video4" class="video-wrapper" style="display: none">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_4"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <!-- Marketing Category -->
+        <h2 class="category-title">Marketing Agents</h2>
+        <section class="agents-grid">
+          <div class="agent-card">
+            <h3>Social Media Automation</h3>
+            <p>
+              Generate captions, hashtags, and schedule posts across all
+              platforms.
+            </p>
+            <button onclick="toggleVideo('video3')">Watch Demo</button>
+            <div id="video3" class="video-wrapper" style="display: none">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_3"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Virtual Customer Experience Category -->
+      <h2 class="category-title">Virtual Customer Experience Agents</h2>
+      <section class="agents-grid">
         <div class="agent-card">
-          <h3>Social Media Auto Poster</h3>
-          <p>Automatically posts engaging content to your platforms.</p>
+          <h3>Website Chat Assistant</h3>
+          <p>
+            Embed an AI chatbot on your business website to answer questions,
+            qualify leads, and assist visitors 24/7.
+          </p>
+          <button onclick="toggleVideo('video5')">Watch Demo</button>
+          <div id="video5" class="video-wrapper" style="display: none">
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_5"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
+
         <div class="agent-card">
-          <h3>Real Estate Deal Finder</h3>
-          <p>Scans listings and pinpoints high-ROI properties.</p>
+          <h3>AI Phone Receptionist</h3>
+          <p>
+            Handle inbound calls with an AI-powered receptionist that greets,
+            routes, and assists callers professionally.
+          </p>
+          <button onclick="toggleVideo('video6')">Watch Demo</button>
+          <div id="video6" class="video-wrapper" style="display: none">
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_6"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
-        <div class="agent-card">
-          <h3>Lead Nurturing Chatbot</h3>
-          <p>Converts website visitors into paying clients—24/7.</p>
-        </div>
-      </div>
-    </main>
+      </section>
+
+      <footer class="scroll-footer hidden-footer">
+        <p>&copy; 2025 Hoosier AI — Built by Evan Jester</p>
+      </footer>
+
+      <script>
+        function toggleVideo(id) {
+          const allVideos = document.querySelectorAll(".video-wrapper");
+          allVideos.forEach((v) => {
+            if (v.id !== id) v.style.display = "none";
+          });
+
+          const vid = document.getElementById(id);
+          vid.style.display = vid.style.display === "none" ? "block" : "none";
+        }
+
+        window.addEventListener("scroll", () => {
+          const footer = document.querySelector(".scroll-footer");
+          const scrollY = window.scrollY;
+          const triggerPoint = 300;
+          if (scrollY > triggerPoint) {
+            footer.classList.add("show-footer");
+          } else {
+            footer.classList.remove("show-footer");
+          }
+        });
+      </script>
+
+      <!-- Voiceflow Assistant -->
+      <script type="text/javascript">
+        (function (d, t) {
+          var v = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+          v.onload = function () {
+            window.voiceflow.chat.load({
+              verify: { projectID: "683f4dab508e1c7cd93eb7ca" },
+              url: "https://general-runtime.voiceflow.com",
+              versionID: "production",
+              voice: {
+                url: "https://runtime-api.voiceflow.com",
+              },
+            });
+          };
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+          v.type = "text/javascript";
+          s.parentNode.insertBefore(v, s);
+        })(document, "script");
+      </script>
+    </div>
   </body>
 </html>

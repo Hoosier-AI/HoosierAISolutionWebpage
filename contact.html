@@ -17,13 +17,15 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="agents.html">AI Agents</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
       <h2 class="page-title">Contact Our Team</h2>
+
       <form>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required />
@@ -36,6 +38,48 @@
 
         <button type="submit">Send Message</button>
       </form>
+
+      <!-- New Contact Info Section -->
+      <section class="contact-info-box">
+        <h3>Or Reach Out Directly</h3>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:hoosieraisolutions@gmail.com"
+            >hoosieraisolutions@gmail.com</a
+          >
+        </p>
+        <p>
+          <strong>Phone:</strong>
+          <a href="tel:+12602408194">+1 (260) 240-8194</a>
+        </p>
+        <p>
+          We typically respond within 24 hours. Looking forward to connecting
+          with you!
+        </p>
+      </section>
     </main>
+
+    <footer>
+      <script type="text/javascript">
+        (function (d, t) {
+          var v = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+          v.onload = function () {
+            window.voiceflow.chat.load({
+              verify: { projectID: "683f4dab508e1c7cd93eb7ca" },
+              url: "https://general-runtime.voiceflow.com",
+              versionID: "production",
+              voice: {
+                url: "https://runtime-api.voiceflow.com",
+              },
+            });
+          };
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+          v.type = "text/javascript";
+          s.parentNode.insertBefore(v, s);
+        })(document, "script");
+      </script>
+      <p>&copy; 2025 Hoosier AI Solutions — Built by Evan Jester</p>
+    </footer>
   </body>
 </html>
